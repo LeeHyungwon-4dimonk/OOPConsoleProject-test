@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,9 @@ namespace OOPConsoleProject
 
         private static bool gameOver;
 
-        
+        private static Player player;
+        public static Player Player { get { return player; } }
+
         public static void Run()
         {
             Start();
@@ -22,8 +25,7 @@ namespace OOPConsoleProject
             while(gameOver == false)
             {
                 Console.Clear();
-                curscene.Render();
-                Console.WriteLine();
+                curscene.Render();               
                 curscene.Input();
                 Console.WriteLine();
                 curscene.Update();
@@ -44,15 +46,17 @@ namespace OOPConsoleProject
         /// </summary>
         private static void Start()
         {
+            Console.CursorVisible = false;
             // 게임 설정
-            gameOver = false;
+            gameOver = false;            
+
+            player = new Player();
 
             // 씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
-            sceneDic.Add("Test01", new TestScene01());
-            sceneDic.Add("Test02", new TestScene02());
-            sceneDic.Add("Test03", new TestScene03());
+            sceneDic.Add("Town", new TownScene());
+            sceneDic.Add("Field", new FieldScene());
 
             curscene = sceneDic["Title"];
         }
