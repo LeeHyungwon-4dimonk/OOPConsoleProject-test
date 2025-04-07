@@ -23,13 +23,22 @@ namespace OOPConsoleProject
             {
                 Console.Clear();
                 curscene.Render();
+                Console.WriteLine();
                 curscene.Input();
+                Console.WriteLine();
                 curscene.Update();
+                Console.WriteLine();
                 curscene.Result();
             }
 
             End();
         }
+
+        public static void ChangeScene(string sceneName)
+        {
+            curscene = sceneDic[sceneName];
+        }
+
         /// <summary>
         /// 게임의 초기 설정을 진행
         /// </summary>
@@ -41,6 +50,9 @@ namespace OOPConsoleProject
             // 씬 설정
             sceneDic = new Dictionary<string, BaseScene>();
             sceneDic.Add("Title", new TitleScene());
+            sceneDic.Add("Test01", new TestScene01());
+            sceneDic.Add("Test02", new TestScene02());
+            sceneDic.Add("Test03", new TestScene03());
 
             curscene = sceneDic["Title"];
         }
