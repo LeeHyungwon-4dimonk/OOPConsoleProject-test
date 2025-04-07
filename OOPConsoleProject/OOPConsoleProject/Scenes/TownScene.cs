@@ -8,6 +8,10 @@ namespace OOPConsoleProject.Scenes
 {
     public class TownScene : BaseScene
     {
+        public TownScene()
+        {
+            name = "Town";
+        }
         private ConsoleKey input;
         public override void Render()
         {
@@ -35,7 +39,7 @@ namespace OOPConsoleProject.Scenes
             {
                 case ConsoleKey.D1:
                     Util.PressAnyKey("마을 밖으로 나갑니다");
-                    Game.ChangeScene("Field");
+                    Game.ChangeScene("NormalField");
                     break;
             }
         }
