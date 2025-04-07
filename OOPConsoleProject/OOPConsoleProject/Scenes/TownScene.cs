@@ -20,8 +20,6 @@ namespace OOPConsoleProject.Scenes
             Console.WriteLine();
             Console.WriteLine("1. 필드로 나간다.");
             Console.Write("어디로 가시겠습니까? ");
-
-
         }
 
         public override void Input()

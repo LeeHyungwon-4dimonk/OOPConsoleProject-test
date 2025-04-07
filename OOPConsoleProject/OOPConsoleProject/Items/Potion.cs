@@ -13,7 +13,7 @@ namespace OOPConsoleProject.Items
             : base('I', position)
         {
             name = "포션";
-            description = "소량의 체력읠 회복하는 아이템";
+            description = "소량의 체력을 회복하는 아이템";
         }
         public override void Use()
         {

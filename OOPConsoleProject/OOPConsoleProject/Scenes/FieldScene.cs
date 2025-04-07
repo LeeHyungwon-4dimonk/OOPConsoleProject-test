@@ -27,7 +27,7 @@ namespace OOPConsoleProject.Scenes
             Game.Player.Print();
 
             Console.SetCursorPosition(0, map.GetLength(0));
-            Game.Player.inventory.PrintAll();
+            Game.Player.inventory.PrintALL();
         }
 
         public override void Input()
@@ -37,7 +37,7 @@ namespace OOPConsoleProject.Scenes
 
         public override void Update()
         {
-            Game.Player.Move(input);
+            Game.Player.Action(input);
         }
 
         public override void Result()
